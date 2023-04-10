@@ -1,0 +1,26 @@
+.app.normal {
+  --bg-color: #fff;
+  --invert-bg-color: #000;
+
+  --primary-color: #000;
+  --secondary-color: #333;
+}
+
+.app.dark {
+  --bg-color: #000;
+  --invert-bg-color: #fff;
+
+  --primary-color: #fff;
+  --secondary-color: #ddd;
+}
+
+.tog-theme {
+  width: 40px;
+  height: 40px;
+  filter: invert(1);
+  background: url(../../../public/icons/change-theme.svg) center/contain no-repeat;
+}
+.tog-theme.dark {
+  filter: invert(0);
+}
+
