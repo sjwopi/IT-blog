@@ -1,26 +1,15 @@
 .app.normal {
-  --bg-color: #fff;
-  --invert-bg-color: #000;
+  --bg-color: #a4bdcc;
+  --invert-bg-color: #112835;
 
-  --primary-color: #000;
-  --secondary-color: #333;
+  --primary-color: #00ff66;
+  --secondary-color: #f00;
 }
 
 .app.dark {
-  --bg-color: #000;
-  --invert-bg-color: #fff;
+  --bg-color: #112835;
+  --invert-bg-color: #a4bdcc;
 
-  --primary-color: #fff;
-  --secondary-color: #ddd;
+  --primary-color: rgb(251, 255, 0); 
+  --secondary-color: #112835;
 }
-
-.tog-theme {
-  width: 40px;
-  height: 40px;
-  filter: invert(1);
-  background: url(../../../public/icons/change-theme.svg) center/contain no-repeat;
-}
-.tog-theme.dark {
-  filter: invert(0);
-}
-

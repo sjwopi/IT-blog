@@ -1,0 +1,16 @@
+.AppLink {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+.primary {
+  color: var(--primary-color);
+}
+.secondary {
+  color: var(--secondary-color);
+}
+.btn {
+  border: 1px var(--primary-color) solid;
+  padding: 5px 10px;
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+}

@@ -1,24 +1,19 @@
-import { Link } from "react-router-dom";
 import classNames from "shared/lib/classNames/classNames";
-import { useTheme } from 'app/providers/ThemeProvider/lib/useTheme';
 import cls from "./Navbar.module.scss";
+import AppLink, { AppLinkTheme } from "shared/ui/AppLink/AppLink";
+import ThemeSwitcher from "widgets/ThemeSwitcher/ui/ThemeSwitcher";
 
 interface NavbarProps {
   className?: string;
 }
 
 export const Navbar = ({className}: NavbarProps) => {
-  const { theme, toggleTheme } = useTheme();
-
   return (
     <div className={classNames(cls.Navbar, {} , [className])}>
-      <button
-        className={classNames('tog-theme', {}, [theme])}
-        onClick={toggleTheme}
-      ></button>
+      <ThemeSwitcher />
       <div className={cls.links}>
-        <Link to={'/'} className={cls.link}>Main</Link>
-        <Link to={'/about'} className={cls.link}>asdf</Link>
+        <AppLink theme={AppLinkTheme.SECONDARY} to={'/'} className={cls.link}>Main</AppLink>
+        <AppLink theme={AppLinkTheme.SECONDARY} to={'/about'} className={cls.link}>About</AppLink>
       </div>
     </div>
   )
