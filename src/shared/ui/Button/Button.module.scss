@@ -5,5 +5,9 @@
   border: none;
   padding: 0;
   outline: none;
-
+}
+.default {
+  background: var(--bg-color);
+  border-radius: 8px;
+  color: var(--secondary-color);
 }

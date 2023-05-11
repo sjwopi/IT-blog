@@ -1,0 +1,31 @@
+.Sidebar {
+  height: calc(100vh - var(--navbar-height));
+  width: var(--sidebar-width);
+  padding-top: 20px;
+  background: var(--invert-bg-color);
+  color: var(--primary-color);
+
+  position: relative;
+  transition: width 0.2s ease-in-out;
+}
+.collapsed {
+  width: var(--sidebar-width-collapsed);
+}
+.switchers {
+  width: 100%;
+  position: absolute;
+  bottom: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.openBtn {
+  font: var(--font-s);
+  padding: 3px 5px;
+  margin: 0 10px 20px calc(100% - 70px);
+  width: 60px;
+}
+.toggleLang {
+  margin: 0 0 20px 0;
+}

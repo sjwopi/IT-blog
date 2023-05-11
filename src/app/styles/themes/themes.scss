@@ -1,15 +1,15 @@
 .app.normal {
   --bg-color: #a4bdcc;
-  --invert-bg-color: #112835;
+  --invert-bg-color: #133;
 
-  --primary-color: #00ff66;
+  --primary-color: #0f6;
   --secondary-color: #f00;
 }
 
 .app.dark {
-  --bg-color: #112835;
+  --bg-color: #133;
   --invert-bg-color: #a4bdcc;
 
-  --primary-color: rgb(251, 255, 0); 
-  --secondary-color: #112835;
+  --primary-color: #133; 
+  --secondary-color: #fbff00; 
 }
