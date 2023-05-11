@@ -1,6 +1,6 @@
 import classNames from 'shared/lib/classNames/classNames';
 import cls from './Sidebar.module.scss';
-import ThemeSwitcher from 'widgets/ThemeSwitcher/ui/ThemeSwitcher';
+import ThemeSwitcher from 'shared/ui/ThemeSwitcher/ui/ThemeSwitcher';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import Button from 'shared/ui/Button/Button';

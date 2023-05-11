@@ -1,12 +1,12 @@
-import { useTranslation } from "react-i18next";
+import { useTranslation } from 'react-i18next';
 
-const AboutPage = () => {
+function AboutPage() {
   const { t } = useTranslation();
   return (
     <div>
       {t('AboutT')}
     </div>
-  )
-};
+  );
+}
 
 export default AboutPage;
