@@ -1,20 +1,21 @@
 module.exports = {
   env: {
     browser: true,
-    es2021: true
+    es2021: true,
+    jest: true,
   },
-  extends: ['plugin:react/recommended', "airbnb", "airbnb/hooks", 'plugin:i18next/recommended'],
-  overrides: [
+  extends: [
+    'plugin:react/recommended',
+    'airbnb',
+    'airbnb/hooks',
+    'plugin:i18next/recommended',
   ],
+  overrides: [],
   parserOptions: {
     ecmaVersion: 'latest',
-    sourceType: 'module'
+    sourceType: 'module',
   },
-  plugins: [
-    'react',
-    '@typescript-eslint',
-    'i18next'
-  ],
+  plugins: ['react', '@typescript-eslint', 'i18next'],
   rules: {
     'import/no-unresolved': 'off',
     'import/prefer-default-export': 'off',
@@ -28,9 +29,8 @@ module.exports = {
     'import/no-extraneous-dependencies': 'off',
     'no-underscore-dangle': 'off',
     'i18next/no-literal-string': ['error', { markupOnly: true }],
-    'i18next/no-literal-string': ['error', {markupOnly: true}]
   },
   globals: {
     __IS_DEV__: true,
-  }
-}
+  },
+};
