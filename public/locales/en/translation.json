@@ -1,10 +1,15 @@
 {
-  "test": "test",
-  "translate": "Translate",
-  "Main": "Main",
-  "MainT": "Main",
-  "About": "About",
-  "AboutT": "asdfas vsdf gh emjrtyuk r sdftnb 23w4  dzxfg2b 3 6 s dfghsfgh sdfgh ",
-  "Opened": "Opened",
-  "Closed": "Closed"
+  "Главная страница": "Main page",
+  "О сайте": "About us",
+  
+  "Главная страницаВ": "Main page",
+  "ОсайтеВ": "About us",
+
+  "Язык": "English",
+  "Открыть": "Opened",
+  "Закрыть": "Closed",
+
+  "Страница не найдена": "Page not found",
+  "Произошла непредвиденная ошибка": "An unexpected error has occurred",
+  "Обновить страницу": "Refresh the page"
 }

@@ -1,4 +1,4 @@
-import classNames from 'shared/lib/classNames/classNames';
+import {classNames} from 'shared/lib/classNames/classNames';
 import cls from './Sidebar.module.scss';
 import ThemeSwitcher from 'shared/ui/ThemeSwitcher/ui/ThemeSwitcher';
 import { useState } from 'react';
@@ -33,7 +33,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
         onClick={onToggle}
         theme={ThemeButton.DEFAULT}
       >
-        {collapsed ? t('Opened') : t('Closed')}
+        {collapsed ? t('Открыть') : t('Закрыть')}
       </Button>
 
     </div>

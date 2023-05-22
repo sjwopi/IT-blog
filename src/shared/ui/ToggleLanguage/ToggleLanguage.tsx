@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import Button, { ThemeButton } from "../Button/Button";
-import classNames from "shared/lib/classNames/classNames";
+import {classNames} from "shared/lib/classNames/classNames";
 import cls from "./ToggleLanguage.module.scss"
 
 interface ToggleLanguageProps {
@@ -10,10 +10,20 @@ interface ToggleLanguageProps {
 export const ToggleLanguage = ({className}: ToggleLanguageProps) => {
   const { t, i18n } = useTranslation();
 
-  const onToggle = () => {
-    i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru')
-  }
+    const toggle = async () => {
+        i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
+    };
 
+    return (
+        <Button
+            className={classNames(cls.translate, {}, [className])}
+            theme={ThemeButton.DEFAULT}
+            onClick={toggle}
+        >
+            {t('Язык')}
+        </Button>
+    );
+/* 
   return (
     <div>
       <Button
@@ -24,7 +34,7 @@ export const ToggleLanguage = ({className}: ToggleLanguageProps) => {
         {t('translate')}
       </Button>
     </div>
-  )
+  ) */
 };
 
 export default ToggleLanguage;
