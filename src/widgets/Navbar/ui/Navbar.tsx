@@ -22,7 +22,7 @@ export const Navbar = ({ className }: NavbarProps) => {
           className={cls.link}
         >
           {t('О сайте')}
-        </AppLink>cd 
+        </AppLink>
       </div>
     </div>
   );
