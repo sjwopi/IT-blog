@@ -1,10 +1,9 @@
-import {classNames} from 'shared/lib/classNames/classNames';
+import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './Sidebar.module.scss';
 import ThemeSwitcher from 'shared/ui/ThemeSwitcher/ui/ThemeSwitcher';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import Button from 'shared/ui/Button/Button';
-import { ThemeButton } from 'shared/ui/Button/Button';
+import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import ToggleLanguage from 'shared/ui/ToggleLanguage/ToggleLanguage';
 
 interface SidebarProps {
@@ -19,6 +18,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
   const { t } = useTranslation();
   return (
     <div
+      data-testid="sidebar"
       className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [
         className,
       ])}
@@ -29,13 +29,13 @@ export const Sidebar = ({ className }: SidebarProps) => {
       </div>
 
       <Button
+        data-testid="sidebar-toggle"
         className={classNames(cls.openBtn, {}, [])}
         onClick={onToggle}
         theme={ThemeButton.DEFAULT}
       >
         {collapsed ? t('Открыть') : t('Закрыть')}
       </Button>
-
     </div>
   );
 };

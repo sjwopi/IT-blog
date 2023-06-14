@@ -1,6 +1,6 @@
 import './styles/index.scss';
 
-import { Suspense } from 'react';
+import { Suspense, useEffect } from 'react';
 import { useTheme } from 'app/providers/ThemeProvider/lib/useTheme';
 import {classNames} from 'shared/lib/classNames/classNames';
 import { Navbar } from 'widgets/Navbar';
