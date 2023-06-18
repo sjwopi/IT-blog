@@ -5,13 +5,11 @@ interface LoaderProps {
   className?: string;
 }
 
-export const Loader = ({ className }: LoaderProps) => {
-  return (
+export const Loader = ({ className }: LoaderProps) => (
     <div className={classNames(cls.ldsRipple, {}, [className])}>
-      <div></div>
-      <div></div>
+        <div />
+        <div />
     </div>
-  );
-};
+);
 
 export default Loader;
