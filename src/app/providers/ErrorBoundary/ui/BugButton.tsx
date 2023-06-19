@@ -13,7 +13,7 @@ export const BugButton = () => {
     }
   }, [error]);
 
-  return <Button onClick={throwN}>bug</Button>;
+  return <Button onClick={throwN}>1234</Button>;
 };
 
 export default BugButton;
