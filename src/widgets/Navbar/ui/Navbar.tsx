@@ -11,7 +11,6 @@ export const Navbar = ({ className }: NavbarProps) => {
   const { t } = useTranslation('about');
 
   return (
-    <div className={classNames(cls.Navbar, {}, [className])}>
-    </div>
+      <div className={classNames(cls.Navbar, {}, [className])} />
   );
 };

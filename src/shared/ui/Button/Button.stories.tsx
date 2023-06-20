@@ -115,7 +115,6 @@ BackgroundDark.args = {
 };
 BackgroundDark.decorators = [ThemeDecorator(Theme.DARK)];
 
-
 export const BackgroundInverted = Template.bind({});
 BackgroundInverted.args = {
   children: 'Text',
@@ -128,4 +127,3 @@ BackgroundInvertedDark.args = {
   theme: ButtonTheme.BACKGROUND_INVERTED,
 };
 BackgroundInvertedDark.decorators = [ThemeDecorator(Theme.DARK)];
-
