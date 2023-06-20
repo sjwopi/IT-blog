@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { Button, ThemeButton } from 'shared/ui/Button/Button';
+import { ButtonTheme, Button } from 'shared/ui/Button/Button';
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './ToggleLanguage.module.scss';
 
@@ -17,24 +17,11 @@ export const ToggleLanguage = ({ className }: ToggleLanguageProps) => {
   return (
       <Button
           className={classNames(cls.translate, {}, [className])}
-          theme={ThemeButton.DEFAULT}
           onClick={toggle}
       >
           {t('Язык')}
       </Button>
   );
-/*
-  return (
-    <div>
-      <Button
-        className={classNames(cls.translate, {}, [className])}
-        onClick={onToggle}
-        theme={ThemeButton.DEFAULT}
-      >
-        {t('translate')}
-      </Button>
-    </div>
-  ) */
 };
 
 export default ToggleLanguage;
