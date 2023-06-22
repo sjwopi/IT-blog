@@ -1,5 +1,6 @@
 .Input {
-  color: var(--secondary-color);
+  color: transparent;
+  text-shadow: 0 0 0 var(--secondary-color);
   background-color: var(--bg-color);
   border-radius: 5px;
   outline-color: var(--secondary-color);
