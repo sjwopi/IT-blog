@@ -1,11 +1,8 @@
 {
-  "": "",
-  "Lorem ipsum dolor, sit amet consectetutempora vel repellat nulla nobis iure quidem nam voluptatibus temporeperferendis eveniet quasi commodi voluptatum beatae deserunt": {
-    " Voluptate,consectetur eveniet?": " Voluptate,consectetur eveniet?",
-    " Voluptateconsectetur eveniet?": " Voluptateconsectetur eveniet?"
-  },
-  "decrement": "",
-  "increment": "",
+  "decrement": "decrement",
+  "increment": "increment",
+  "Введите username": "Введите username",
+  "Ввендите пароль": "Ввендите пароль",
   "Войти": "Войти",
   "Главная страница": "Главная страница",
   "Закрыть": "Закрыть",

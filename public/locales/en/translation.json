@@ -11,5 +11,8 @@
   "Обновить страницу": "Refresh the page",
 
   "increment": "increment",
-  "decrement": "decrement"
+  "decrement": "decrement",
+
+  "Введите логин": "Enter username",
+  "Введите пароль": "Enter password"
 }

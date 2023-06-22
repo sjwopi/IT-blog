@@ -1,0 +1,12 @@
+.Input {
+  color: var(--secondary-color);
+  background-color: var(--bg-color);
+  border-radius: 5px;
+  outline-color: var(--secondary-color);
+  margin: 0 0 40px;
+  padding: 5px 10px;
+}
+
+.placeholder {
+  text-transform: capitalize;
+}
