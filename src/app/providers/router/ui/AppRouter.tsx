@@ -5,17 +5,17 @@ import PageLoader from 'shared/ui/PageLoader/ui/PageLoader';
 
 function AppRouter() {
   return (
-      <Suspense fallback={<PageLoader />}>
-          <Routes>
-              {Object.values(routeConfig).map(({ element, path }) => (
-                  <Route
-                      key={path}
-                      path={path}
-                      element={<div className="page-wrapper">{element}</div>}
-                  />
-              ))}
-          </Routes>
-      </Suspense>
+    <Suspense fallback={<PageLoader />}>
+      <Routes>
+        {Object.values(routeConfig).map(({ element, path }) => (
+          <Route
+            key={path}
+            path={path}
+            element={<div className="page-wrapper">{element}</div>}
+          />
+        ))}
+      </Routes>
+    </Suspense>
   );
 }
 export default AppRouter;

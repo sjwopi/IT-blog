@@ -7,8 +7,13 @@ import {
 
 const defaultTheme = (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) || Theme.NORMAL;
 
-const ThemeProvider: FC = ({ children }) => {
-  const [theme, setTheme] = useState<Theme>(defaultTheme);
+interface ThemeProviderProps {
+  initialTheme?: Theme;
+}
+
+const ThemeProvider: FC<ThemeProviderProps> = (props) => {
+  const { initialTheme, children } = props;
+  const [theme, setTheme] = useState<Theme>(initialTheme || defaultTheme);
 
   const defaultProps = useMemo(
     () => ({
@@ -19,9 +24,9 @@ const ThemeProvider: FC = ({ children }) => {
   );
 
   return (
-      <ThemeContext.Provider value={defaultProps}>
-          {children}
-      </ThemeContext.Provider>
+    <ThemeContext.Provider value={defaultProps}>
+      {children}
+    </ThemeContext.Provider>
   );
 };
 

@@ -6,10 +6,10 @@ interface LoaderProps {
 }
 
 export const Loader = ({ className }: LoaderProps) => (
-    <div className={classNames(cls.ldsRipple, {}, [className])}>
-        <div />
-        <div />
-    </div>
+  <div className={classNames(cls.ldsRipple, {}, [className])}>
+    <div />
+    <div />
+  </div>
 );
 
 export default Loader;

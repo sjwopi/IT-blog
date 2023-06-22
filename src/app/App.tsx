@@ -1,25 +1,24 @@
-import './styles/index.scss';
-
-import { Suspense, useEffect } from 'react';
-import { useTheme } from 'app/providers/ThemeProvider/lib/useTheme';
+import { Suspense, useEffect, useState } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
 import { AppRouter } from './providers/router';
+import { useTheme } from './providers/ThemeProvider';
 
 function App() {
   const { theme } = useTheme();
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-      <div className={classNames('app', {}, [theme])}>
-          <Suspense fallback="">
-              <Navbar />
-              <div className="content-page">
-                  <Sidebar />
-                  <AppRouter />
-              </div>
-          </Suspense>
-      </div>
+    <div className={classNames('app', {}, [theme])}>
+      <Suspense fallback="">
+        <Navbar />
+        <div className="content-page">
+          <Sidebar />
+          <AppRouter />
+        </div>
+      </Suspense>
+    </div>
   );
 }
 export default App;

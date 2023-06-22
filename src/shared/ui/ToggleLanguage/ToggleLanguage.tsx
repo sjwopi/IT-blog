@@ -15,12 +15,12 @@ export const ToggleLanguage = ({ className }: ToggleLanguageProps) => {
   };
 
   return (
-      <Button
-          className={classNames(cls.translate, {}, [className])}
-          onClick={toggle}
-      >
-          {t('Язык')}
-      </Button>
+    <Button
+      className={classNames(cls.translate, {}, [className])}
+      onClick={toggle}
+    >
+      {t('Язык')}
+    </Button>
   );
 };
 

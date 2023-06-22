@@ -10,10 +10,10 @@ interface MainPageProps {
 export const MainPage = ({ className }: MainPageProps) => {
   const { t } = useTranslation();
   return (
-      <div className={classNames(cls.MainPage, {}, [className])}>
-          {t('Главная страница')}
-          <BugButton />
-      </div>
+    <div className={classNames(cls.MainPage, {}, [className])}>
+      {t('Главная страница')}
+      <BugButton />
+    </div>
   );
 };
 

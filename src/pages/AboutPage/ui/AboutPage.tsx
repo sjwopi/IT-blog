@@ -9,9 +9,9 @@ interface AboutPageProps {
 export const AboutPage = ({ className }: AboutPageProps) => {
   const { t } = useTranslation();
   return (
-      <div className={classNames(cls.AboutPage, {}, [className])}>
-          {t('О сайте')}
-      </div>
+    <div className={classNames(cls.AboutPage, {}, [className])}>
+      {t('О сайте')}
+    </div>
   );
 };
 
