@@ -2,12 +2,16 @@
   --bg-color: #a4bdcc;
   --invert-bg-color: #133;
   --primary-color: #0f6;
-  --secondary-color: #f00;
+  --primary-color-dark: rgb(0, 207, 124);
+  --secondary-color: rgb(0, 30, 255);
+  --secondary-color-dark: rgb(0, 24, 89);
 }
 
 .app_dark_theme {
   --bg-color: #133;
   --invert-bg-color: #a4bdcc;
   --primary-color: #133;
+  --primary-color-dark: rgb(52, 109, 112);
   --secondary-color: #fbff00;
+  --secondary-color-dark: #ff6200;
 }

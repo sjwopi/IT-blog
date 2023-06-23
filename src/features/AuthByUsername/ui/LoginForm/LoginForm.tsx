@@ -1,37 +1,65 @@
-import { useState } from 'react';
+import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
+import { useDispatch, useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
+import Text, { TextTheme } from 'shared/ui/Text/Text';
+import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
+import { getLoginState } from '../../model/selectors/getLoginState/getLoginState';
+import { loginActions } from '../../model/slice/loginSlice';
 import cls from './LoginForm.module.scss';
 
 interface LoginFormProps {
   className?: string;
 }
 
-export const LoginForm = ({ className }: LoginFormProps) => {
+export const LoginForm = memo(({ className }: LoginFormProps) => {
   const { t } = useTranslation();
-  const [value, setValue] = useState('');
+  const dispath = useDispatch();
+  const {
+    username, password, error, isLoading,
+  } = useSelector(getLoginState);
 
-  const onChange = (value: string) => {
-    setValue(value);
-  };
+  const onChangeUsername = useCallback(
+    (value: string) => {
+      dispath(loginActions.setUsername(value));
+    },
+    [dispath],
+  );
+
+  const onChangePassword = useCallback(
+    (value: string) => {
+      dispath(loginActions.setPassword(value));
+    },
+    [dispath],
+  );
+
+  const onLoginClick = useCallback(() => {
+    dispath(loginByUsername({ username, password }));
+  }, [dispath, password, username]);
 
   return (
     <div className={classNames(cls.LoginForm, {}, [className])}>
+      <Text className={cls.loginTitle} title={t('Форма авторизации')} theme={TextTheme.SECONDARY} />
+      {error && <Text className={cls.loginTitle} text={error} theme={TextTheme.ERROR} />}
       <Input
-        placeholder={t('Введите username')}
+        placeholder={t('Введите логин')}
         type="text"
-        onChange={onChange}
+        onChange={onChangeUsername}
+        value={username}
       />
       <Input
-        placeholder={t('Ввендите пароль')}
+        placeholder={t('Введите пароль')}
         type="text"
-        onChange={onChange}
+        onChange={onChangePassword}
+        value={password}
       />
-      <Button className={cls.loginBtn}>{t('Войти')}</Button>
+      <Button className={cls.loginBtn} onClick={onLoginClick} disabled={isLoading}>
+        {t('Войти')}
+      </Button>
     </div>
   );
-};
+});
 
 export default LoginForm;

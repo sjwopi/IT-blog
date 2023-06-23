@@ -29,7 +29,7 @@ export const Input = memo((props: InputProps) => {
   };
 
   return (
-    <div>
+    <div className={cls.inputContainer}>
       {placeholder && <div className={cls.placeholder}>{placeholder}</div>}
       <input
         className={classNames(cls.Input, {}, [className])}
