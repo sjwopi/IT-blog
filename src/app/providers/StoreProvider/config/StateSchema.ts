@@ -7,11 +7,15 @@ import {
 } from '@reduxjs/toolkit';
 import { CombinedState } from 'redux';
 import { loginSchema } from 'features/AuthByUsername';
+import { AxiosInstance } from 'axios';
+import { NavigateOptions, To } from 'react-router-dom';
+import { ProfileSchema } from 'entities/Profile';
 
 export interface StateSchema {
   user: UserSchema;
   // Асинхронные редюсеры
   loginForm?: loginSchema;
+  profile?: ProfileSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;
@@ -25,4 +29,14 @@ export interface ReducerManager {
 
 export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {
   reducerManager: ReducerManager;
+}
+
+export interface ThunkExtraArg {
+  api: AxiosInstance;
+  navigate: (to: To, options?: NavigateOptions) => void;
+}
+
+export interface ThunkConfig<T> {
+  rejectValue: T;
+  extra: ThunkExtraArg;
 }

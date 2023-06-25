@@ -1,8 +1,9 @@
 import { memo, useCallback, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
+import { useAppDispath } from 'shared/lib/hooks/useAppDispath/useAppDispath';
 import { Button } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
-import { useDispatch, useSelector, useStore } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
 import Text, { TextTheme } from 'shared/ui/Text/Text';
 import { DynamicModuleLoader, ReducersList } from 'shared/components/DynamicModuleLoader/DynamicModuleLoader';
@@ -15,15 +16,16 @@ import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import cls from './LoginForm.module.scss';
 
 export interface LoginFormProps {
+  onSuccess: () => void;
   className?: string;
 }
 const initialReducers: ReducersList = {
   loginForm: loginReducer,
 };
 
-const LoginForm = memo(({ className }: LoginFormProps) => {
+const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
   const { t } = useTranslation();
-  const dispath = useDispatch();
+  const dispath = useAppDispath();
   const username = useSelector(getLoginStateUsername);
   const password = useSelector(getLoginStatePassword);
   const isLoading = useSelector(getLoginStateIsLoading);
@@ -43,9 +45,12 @@ const LoginForm = memo(({ className }: LoginFormProps) => {
     [dispath],
   );
 
-  const onLoginClick = useCallback(() => {
-    dispath(loginByUsername({ username, password }));
-  }, [dispath, password, username]);
+  const onLoginClick = useCallback(async () => {
+    const result = await dispath(loginByUsername({ username, password }));
+    if (result.meta.requestStatus === 'fulfilled') {
+      onSuccess();
+    }
+  }, [dispath, password, username, onSuccess]);
 
   return (
     <DynamicModuleLoader removeAfterUnmount reducers={initialReducers}>

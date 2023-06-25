@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ButtonTheme, Button } from 'shared/ui/Button/Button';
 import { classNames } from 'shared/lib/classNames/classNames';
@@ -7,7 +8,7 @@ interface ToggleLanguageProps {
   className?: string;
 }
 
-export const ToggleLanguage = ({ className }: ToggleLanguageProps) => {
+export const ToggleLanguage = memo(({ className }: ToggleLanguageProps) => {
   const { t, i18n } = useTranslation();
 
   const toggle = async () => {
@@ -22,6 +23,6 @@ export const ToggleLanguage = ({ className }: ToggleLanguageProps) => {
       {t('Язык')}
     </Button>
   );
-};
+});
 
 export default ToggleLanguage;

@@ -39,24 +39,6 @@
   display: flex;
   align-items: center;
 }
-
-.link {
-  white-space: nowrap;
-  width: 100px;
-  height: var(--font-line-s);
-  margin-left: 10px;
-  transition: all 0.2s;
-}
-
-.icon {
-  fill: var(--primary-color);
-}
-
 .collapsed {
   width: var(--sidebar-width-collapsed);
-
-  .link {
-    opacity: 0;
-    width: 0;
-  }
 }

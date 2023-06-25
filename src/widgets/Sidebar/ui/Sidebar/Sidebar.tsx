@@ -1,20 +1,18 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import ThemeSwitcher from 'shared/ui/ThemeSwitcher/ThemeSwitcher';
-import AppLink, { AppLinkTheme } from 'shared/ui/AppLink/AppLink';
-import { useState } from 'react';
+import { memo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { ButtonTheme, Button, ButtonSize } from 'shared/ui/Button/Button';
+import { Button, ButtonSize } from 'shared/ui/Button/Button';
 import ToggleLanguage from 'shared/ui/ToggleLanguage/ToggleLanguage';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import AboutIcon from 'shared/assets/icons/about-20-20.svg';
-import MainIcon from 'shared/assets/icons/main-20-20.svg';
 import cls from './Sidebar.module.scss';
+import { SidebarItemsList } from '../../model/items';
+import SidebarItem from '../SidebarItem/SidebarItem';
 
 interface SidebarProps {
   className?: string;
 }
 
-export const Sidebar = ({ className }: SidebarProps) => {
+export const Sidebar = memo(({ className }: SidebarProps) => {
   const [collapsed, setCollapsed] = useState(false);
   const onToggle = () => {
     setCollapsed(!collapsed);
@@ -37,22 +35,9 @@ export const Sidebar = ({ className }: SidebarProps) => {
       </Button>
 
       <div className={cls.items}>
-        <AppLink
-          theme={AppLinkTheme.PRIMARY}
-          to={RoutePath.main}
-          className={cls.item}
-        >
-          <MainIcon className={cls.icon} />
-          <span className={cls.link}>{t('Главная страница')}</span>
-        </AppLink>
-        <AppLink
-          theme={AppLinkTheme.PRIMARY}
-          to={RoutePath.about}
-          className={cls.item}
-        >
-          <AboutIcon className={cls.icon} />
-          <span className={cls.link}>{t('О сайте')}</span>
-        </AppLink>
+        {SidebarItemsList.map((item) => (
+          <SidebarItem key={item.path} item={item} collapsed={collapsed} />
+        ))}
       </div>
 
       <div className={cls.switchers}>
@@ -61,6 +46,4 @@ export const Sidebar = ({ className }: SidebarProps) => {
       </div>
     </div>
   );
-};
-
-export default Sidebar;
+});
