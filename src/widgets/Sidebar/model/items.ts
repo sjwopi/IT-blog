@@ -7,23 +7,23 @@ import ProfileIcon from 'shared/assets/icons/profile-20-20.svg';
 export interface SidebarItemType {
   path: string;
   text: string;
-  Icon?: React.VFC<React.SVGProps<SVGSVGElement>>;
+  Icon: React.VFC<React.SVGProps<SVGSVGElement>>;
 }
 
 export const SidebarItemsList: SidebarItemType[] = [
   {
     path: RoutePath.main,
-    text: 'Главная',
     Icon: MainIcon,
+    text: 'Главная',
   },
   {
     path: RoutePath.about,
-    text: 'О сайте',
     Icon: AboutIcon,
+    text: 'О сайте',
   },
   {
     path: RoutePath.profile,
-    text: 'Профиль',
     Icon: ProfileIcon,
+    text: 'Профиль',
   },
 ];

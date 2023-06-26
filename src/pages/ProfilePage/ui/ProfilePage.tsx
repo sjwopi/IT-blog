@@ -1,29 +1,33 @@
-import { memo } from 'react';
+import { memo, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
 import {
   DynamicModuleLoader,
   ReducersList,
 } from 'shared/components/DynamicModuleLoader/DynamicModuleLoader';
-import { profileReducer } from 'entities/Profile';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispath/useAppDispath';
+import {
+  fetchProfileData,
+  profileReducer,
+  ProfileCard,
+} from 'entities/Profile';
 import cls from './ProfilePage.module.scss';
 
 const reducers: ReducersList = {
   profile: profileReducer,
 };
 
-interface ProfilePageProps {
-  className?: string;
-}
-
-const ProfilePage = memo(({ className }: ProfilePageProps) => {
+const ProfilePage = memo(() => {
   const { t } = useTranslation();
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(fetchProfileData());
+  }, [dispatch]);
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <div className={classNames(cls.LoginForm, {}, [className])}>
-        {t('Cтраница профиля')}
-      </div>
+      <ProfileCard />
     </DynamicModuleLoader>
   );
 });

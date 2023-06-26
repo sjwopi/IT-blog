@@ -1,7 +1,7 @@
-import { memo, useCallback, useEffect } from 'react';
+import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
-import { useAppDispath } from 'shared/lib/hooks/useAppDispath/useAppDispath';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispath/useAppDispath';
 import { Button } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
 import { classNames } from 'shared/lib/classNames/classNames';
@@ -25,7 +25,7 @@ const initialReducers: ReducersList = {
 
 const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
   const { t } = useTranslation();
-  const dispath = useAppDispath();
+  const dispath = useAppDispatch();
   const username = useSelector(getLoginStateUsername);
   const password = useSelector(getLoginStatePassword);
   const isLoading = useSelector(getLoginStateIsLoading);

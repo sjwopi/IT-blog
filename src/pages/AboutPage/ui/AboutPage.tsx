@@ -3,14 +3,10 @@ import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './AboutPage.module.scss';
 
-interface AboutPageProps {
-  className?: string;
-}
-
-export const AboutPage = memo(({ className }: AboutPageProps) => {
+export const AboutPage = memo(() => {
   const { t } = useTranslation();
   return (
-    <div className={classNames(cls.AboutPage, {}, [className])}>
+    <div className={classNames(cls.AboutPage, {}, [])}>
       {t('О сайте')}
     </div>
   );
