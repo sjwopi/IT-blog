@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import cls from './NotFoundPage.module.scss';
 
 export const NotFoundPage = memo(() => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('not-found');
   return (
     <div className={classNames(cls.NotFoundPage, {}, [])}>
       {t('Страница не найдена')}

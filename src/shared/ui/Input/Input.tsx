@@ -1,4 +1,4 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { ModsType, classNames } from 'shared/lib/classNames/classNames';
 import React, { InputHTMLAttributes, memo, useState } from 'react';
 import cls from './Input.module.scss';
 
@@ -10,15 +10,16 @@ export enum InputTheme {
 
 type HTMLInputProps = Omit<
   InputHTMLAttributes<HTMLInputElement>,
-  'value' | 'onChange'
+  'value' | 'onChange' | 'readOnly'
 >;
 
 interface InputProps extends HTMLInputProps {
   className?: string;
-  value?: string;
+  value?: string | number;
   theme?: InputTheme;
   onChange?: (value: string) => void;
   autofocus?: boolean;
+  readonly?: boolean;
 }
 
 export const Input = memo((props: InputProps) => {
@@ -29,6 +30,7 @@ export const Input = memo((props: InputProps) => {
     onChange,
     type = 'text',
     placeholder,
+    readonly,
     ...otherProps
   } = props;
 
@@ -36,14 +38,20 @@ export const Input = memo((props: InputProps) => {
     onChange?.(e.target.value);
   };
 
+  const mods: ModsType = {
+    [cls[theme]]: true,
+    [cls.readonly]: readonly,
+  };
+
   return (
     <div className={cls.inputContainer}>
-      {placeholder && <div className={cls.placeholder}>{placeholder}</div>}
+      {placeholder && <div className={classNames(cls.placeholder, {}, [cls[theme]])}>{placeholder}</div>}
       <input
-        className={classNames(cls.Input, { [cls[theme]]: true }, [className])}
+        className={classNames(cls.Input, mods, [className])}
         type={type}
         value={value}
         onChange={onChangeHandler}
+        readOnly={readonly}
         {...otherProps}
       />
     </div>

@@ -9,7 +9,7 @@ interface PageErrorProps {
 }
 
 export const PageError = memo(({ className }: PageErrorProps) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('not-found');
 
   const reloadPage = () => {
     // eslint-disable-next-line no-restricted-globals
