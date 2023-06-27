@@ -17,6 +17,8 @@ import {
   getProfileReadOnly,
   profileActions,
 } from 'entities/Profile';
+import { Currency } from 'entities/Currency';
+import { Country } from 'entities/Country';
 import cls from './ProfilePage.module.scss';
 
 const reducers: ReducersList = {
@@ -49,6 +51,18 @@ const ProfilePage = memo(() => {
   const onChangeCity = useCallback((value?: string) => {
     dispatch(profileActions.updateProfile({ city: value || '' }));
   }, [dispatch]);
+  const onChangeAvatar = useCallback((value?: string) => {
+    dispatch(profileActions.updateProfile({ avatar: value || '' }));
+  }, [dispatch]);
+  const onChangeUsername = useCallback((value?: string) => {
+    dispatch(profileActions.updateProfile({ username: value || '' }));
+  }, [dispatch]);
+  const onChangeCurrency = useCallback((value?: Currency) => {
+    dispatch(profileActions.updateProfile({ currency: value }));
+  }, [dispatch]);
+  const onChangeCountry = useCallback((value?: Country) => {
+    dispatch(profileActions.updateProfile({ country: value }));
+  }, [dispatch]);
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
@@ -61,6 +75,10 @@ const ProfilePage = memo(() => {
         onChangeLastname={onChangeLastname}
         onChangeAge={onChangeAge}
         onChangeCity={onChangeCity}
+        onChangeAvatar={onChangeAvatar}
+        onChangeUsername={onChangeUsername}
+        onChangeCurrency={onChangeCurrency}
+        onChangeCountry={onChangeCountry}
       />
     </DynamicModuleLoader>
   );

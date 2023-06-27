@@ -1,0 +1,23 @@
+.Wrapper {
+  display: flex;
+}
+
+.label {
+  padding: 4px 0 0 0;
+  margin-right: 10px;
+  color: var(--secondary-color-dark);
+}
+
+.select {
+  background: none;
+  outline: none;
+  color: var(--secondary-color);
+  padding: 6px 8px 6px 2px;
+  border: 1px solid var(--secondary-color);
+  border-radius: 3px;
+}
+
+.option {
+  color: var(--primary-color);
+  background: var(--invert-bg-color);
+}

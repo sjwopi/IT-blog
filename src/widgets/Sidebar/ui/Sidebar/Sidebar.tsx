@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import ThemeSwitcher from 'shared/ui/ThemeSwitcher/ThemeSwitcher';
-import { memo, useMemo, useState } from 'react';
+import { memo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button, ButtonSize } from 'shared/ui/Button/Button';
 import ToggleLanguage from 'shared/ui/ToggleLanguage/ToggleLanguage';
@@ -16,14 +16,8 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
   const { t } = useTranslation();
   const [collapsed, setCollapsed] = useState(false);
   const onToggle = () => {
-    setCollapsed(!collapsed);
+    setCollapsed((prev) => !prev);
   };
-  const itemsList = useMemo(
-    () => SidebarItemsList.map((item) => (
-      <SidebarItem item={item} collapsed={collapsed} key={item.path} />
-    )),
-    [collapsed],
-  );
 
   return (
     <div

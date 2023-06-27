@@ -4,12 +4,13 @@
   text-shadow: 0 0 0 var(--secondary-color);
   background-color: var(--bg-color);
   border-radius: 5px;
-  margin: 0 0 30px;
+  margin: 0 0 20px;
   padding: 5px 10px;
 }
 
 .inputContainer {
   width: 100%;
+  position: relative;
 }
 
 .readonly {
@@ -29,6 +30,18 @@
   text-transform: capitalize;
   border: none;
 }
-.placeholder.outline {
-  color: var(--secondary-color);
+
+.profile {
+  outline: none;
+  border: 1px solid var(--secondary-color);
+}
+.placeholder.profile {
+  position: absolute;
+  color: var(--secondary-color-dark);
+  border: none;
+  left: 16px;
+  top: -4px;
+  z-index: 2;
+  background-color: var(--bg-color);
+  padding: 0 4px;
 }

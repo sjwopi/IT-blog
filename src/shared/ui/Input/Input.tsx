@@ -6,6 +6,7 @@ export enum InputTheme {
   CLEAR = 'clear',
   OUTLINE = 'outline',
   OUTLINE_INVERTED = 'outlineInverted',
+  PROFILE = 'profile'
 }
 
 type HTMLInputProps = Omit<
