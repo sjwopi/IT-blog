@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { BugButton } from 'app/providers/ErrorBoundary';
 import cls from './MainPage.module.scss';
 
-export const MainPage = memo(() => {
+const MainPage = () => {
   const { t } = useTranslation();
   return (
     <div className={classNames(cls.MainPage, {}, [])}>
@@ -12,6 +12,6 @@ export const MainPage = memo(() => {
       <BugButton />
     </div>
   );
-});
+};
 
-export default MainPage;
+export default memo(MainPage);

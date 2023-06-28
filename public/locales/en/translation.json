@@ -2,6 +2,7 @@
   "Главная страница": "Main",
   "О сайте": "About us",
   "Профиль": "Profile",
+  "Статьи": "Articles",
 
   "Язык": "English",
   "Открыть": "Opened",
@@ -15,7 +16,7 @@
 
   "Войти": "Enter",
   "Выйти": "Exit",
-  
+
   "Укажите страну": "Specify country",
   "Укажите валюту": "Specify currency"
 }
