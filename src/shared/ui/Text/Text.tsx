@@ -43,5 +43,3 @@ export const Text = memo((props: TextProps) => {
     </div>
   );
 });
-
-export default Text;

@@ -70,7 +70,6 @@ export const ProfileCard = (props: ProfileCardProps) => {
 
   return (
     <div className={classNames(cls.ProfileCard, {}, [className])}>
-      <ProfilePageHeader />
       <div className={cls.data}>
         {data?.avatar && (
           <div className={cls.avatarWrapper}>

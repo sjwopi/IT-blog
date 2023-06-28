@@ -5,7 +5,7 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispath/useAppDispath';
 import { Button } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
 import { classNames } from 'shared/lib/classNames/classNames';
-import Text, { TextTheme } from 'shared/ui/Text/Text';
+import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { DynamicModuleLoader, ReducersList } from 'shared/components/DynamicModuleLoader/DynamicModuleLoader';
 import { getLoginStateUsername } from '../../model/selectors/getLoginStateUsername/getLoginStateUsername';
 import { getLoginStatePassword } from '../../model/selectors/getLoginStatePassword/getLoginStatePassword';

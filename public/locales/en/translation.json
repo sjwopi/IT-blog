@@ -7,9 +7,6 @@
   "Открыть": "Opened",
   "Закрыть": "Closed",
 
-  "increment": "increment",
-  "decrement": "decrement",
-
   "Форма авторизации": "Authorization form",
   "error": "Wrong username or password",
 
@@ -17,5 +14,8 @@
   "Введите пароль": "Enter password",
 
   "Войти": "Enter",
-  "Выйти": "Exit"
+  "Выйти": "Exit",
+  
+  "Укажите страну": "Specify country",
+  "Укажите валюту": "Specify currency"
 }

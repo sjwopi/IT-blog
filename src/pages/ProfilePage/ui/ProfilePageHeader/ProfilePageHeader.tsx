@@ -5,7 +5,11 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispath/useAppDispath';
 import { Text } from 'shared/ui/Text/Text';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
-import { getProfileReadOnly, profileActions, updateProfileData } from 'entities/Profile';
+import {
+  getProfileReadOnly,
+  profileActions,
+  updateProfileData,
+} from 'entities/Profile';
 import cls from './ProfilePageHeader.module.scss';
 
 interface ProfilePageHeaderProps {
@@ -31,32 +35,26 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
   return (
     <div className={classNames(cls.ProfilePageHeader, {}, [className])}>
       <Text title={t('Профиль')} />
-      {readonly ? (
-        <Button
-          className={cls.editBtn}
-          theme={ButtonTheme.OUTLINE}
-          onClick={onEdit}
-        >
-          {t('Редактировать')}
-        </Button>
-      ) : (
-        <>
-          <Button
-            className={cls.editBtn}
-            theme={ButtonTheme.OUTLINE_RED}
-            onClick={onCanselEdit}
-          >
-            {t('Отменить')}
+      <div>
+        {readonly ? (
+          <Button theme={ButtonTheme.OUTLINE} onClick={onEdit}>
+            {t('Редактировать')}
           </Button>
-          <Button
-            className={cls.saveBtn}
-            theme={ButtonTheme.OUTLINE}
-            onClick={onSave}
-          >
-            {t('Сохранить')}
-          </Button>
-        </>
-      )}
+        ) : (
+          <>
+            <Button
+              className={cls.editBtn}
+              theme={ButtonTheme.OUTLINE}
+              onClick={onSave}
+            >
+              {t('Сохранить')}
+            </Button>
+            <Button theme={ButtonTheme.OUTLINE_RED} onClick={onCanselEdit}>
+              {t('Отменить')}
+            </Button>
+          </>
+        )}
+      </div>
     </div>
   );
 };

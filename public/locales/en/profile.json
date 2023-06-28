@@ -3,8 +3,19 @@
   "Редактировать": "Edit",
   "Отменить": "Cancel",
   "Сохранить": "Save",
-  "Ваша фамилия": "Your lastname",
-  "Ваше имя": "Your name",
   "Что-то пошло не так": "Something went wrong",
-  "Попробуйте обновить страницу":"Try refreshing the page"
+  "Попробуйте обновить страницу": "Try refreshing the page",
+
+  "Серверная ошибка при сохранении": "Server error when saving",
+  "Некорректный регион": "Incorrect region",
+  "Данные не указаны": "Data not specified",
+  "Имя и фамилия обязательны": "First and last name required",
+  "Некорректный возраст": "Incorrect age",
+
+  "Ваша фамилия": "Your surname",
+  "Ваше имя": "Your name",
+  "Ваш возраст": "Your age",
+  "Город": "City",
+  "Ссылка на ваш аватар": "Link to your avatar",
+  "Имя пользователя": "User name"
 }
