@@ -13,13 +13,16 @@ export function useTheme(): UseThemeResult {
     let newTheme: Theme;
     switch (theme) {
     case Theme.DARK:
+      newTheme = Theme.ORANGE;
+      break;
+    case Theme.ORANGE:
       newTheme = Theme.NORMAL;
       break;
     case Theme.NORMAL:
       newTheme = Theme.DARK;
       break;
     default:
-      newTheme = Theme.NORMAL;
+      newTheme = Theme.DARK;
     }
     setTheme?.(newTheme);
     localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
