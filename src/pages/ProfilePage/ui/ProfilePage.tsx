@@ -44,38 +44,64 @@ const ProfilePage = memo(() => {
     [ValidateProfileError.NO_DATA]: t('Данные не указаны'),
     [ValidateProfileError.INCORRECT_USER_DATA]: t('Имя и фамилия обязательны'),
     [ValidateProfileError.INCORRECT_AGE]: t('Некорректный возраст'),
-};
+  };
 
   useEffect(() => {
-    dispatch(fetchProfileData());
-  }, [dispatch]);
-
-  const onChangeFirstname = useCallback((value?: string) => {
-    dispatch(profileActions.updateProfile({ first: value || '' }));
-  }, [dispatch]);
-  const onChangeLastname = useCallback((value?: string) => {
-    dispatch(profileActions.updateProfile({ lastname: value || '' }));
-  }, [dispatch]);
-  const onChangeAge = useCallback((value?: string) => {
-    if (Number(value || '') === Number(value)) {
-      dispatch(profileActions.updateProfile({ age: Number(value || '') }));
+    if (__PROJECT__ !== 'storybook') {
+      dispatch(fetchProfileData());
     }
   }, [dispatch]);
-  const onChangeCity = useCallback((value?: string) => {
-    dispatch(profileActions.updateProfile({ city: value || '' }));
-  }, [dispatch]);
-  const onChangeAvatar = useCallback((value?: string) => {
-    dispatch(profileActions.updateProfile({ avatar: value || '' }));
-  }, [dispatch]);
-  const onChangeUsername = useCallback((value?: string) => {
-    dispatch(profileActions.updateProfile({ username: value || '' }));
-  }, [dispatch]);
-  const onChangeCurrency = useCallback((value?: Currency) => {
-    dispatch(profileActions.updateProfile({ currency: value }));
-  }, [dispatch]);
-  const onChangeCountry = useCallback((value?: Country) => {
-    dispatch(profileActions.updateProfile({ country: value }));
-  }, [dispatch]);
+
+  const onChangeFirstname = useCallback(
+    (value?: string) => {
+      dispatch(profileActions.updateProfile({ first: value || '' }));
+    },
+    [dispatch],
+  );
+  const onChangeLastname = useCallback(
+    (value?: string) => {
+      dispatch(profileActions.updateProfile({ lastname: value || '' }));
+    },
+    [dispatch],
+  );
+  const onChangeAge = useCallback(
+    (value?: string) => {
+      if (Number(value || '') === Number(value)) {
+        dispatch(profileActions.updateProfile({ age: Number(value || '') }));
+      }
+    },
+    [dispatch],
+  );
+  const onChangeCity = useCallback(
+    (value?: string) => {
+      dispatch(profileActions.updateProfile({ city: value || '' }));
+    },
+    [dispatch],
+  );
+  const onChangeAvatar = useCallback(
+    (value?: string) => {
+      dispatch(profileActions.updateProfile({ avatar: value || '' }));
+    },
+    [dispatch],
+  );
+  const onChangeUsername = useCallback(
+    (value?: string) => {
+      dispatch(profileActions.updateProfile({ username: value || '' }));
+    },
+    [dispatch],
+  );
+  const onChangeCurrency = useCallback(
+    (value?: Currency) => {
+      dispatch(profileActions.updateProfile({ currency: value }));
+    },
+    [dispatch],
+  );
+  const onChangeCountry = useCallback(
+    (value?: Country) => {
+      dispatch(profileActions.updateProfile({ country: value }));
+    },
+    [dispatch],
+  );
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
