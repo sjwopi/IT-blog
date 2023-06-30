@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
-import { Text, TextTheme } from './Text';
+import { Text, TextSize, TextTheme } from './Text';
 
 export default {
   title: 'shared/Text',
@@ -20,7 +20,17 @@ Primary.args = {
   title: 'Title',
   text: 'asdf asdf f asdf asddfasdfas',
 };
-
+export const PrimaryS = Template.bind({});
+Primary.args = {
+  title: 'Title',
+  text: 'asdf asdf f asdf asddfasdfas',
+  size: TextSize.S,
+};export const PrimaryL = Template.bind({});
+Primary.args = {
+  title: 'Title',
+  text: 'asdf asdf f asdf asddfasdfas',
+  size: TextSize.M,
+};
 export const PrimaryDark = Template.bind({});
 PrimaryDark.args = {
   title: 'Title',
