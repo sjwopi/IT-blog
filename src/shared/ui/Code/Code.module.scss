@@ -1,7 +1,8 @@
 .Code {
-  border: 1px solid var(--secondary-color-dark);
+  border: 1px solid var(--secondary-color);
   padding: 20px;
   position: relative;
+  color: var(--secondary-color-dark);
   background: var(--code-bg-color);
   overflow: auto;
 }

@@ -1,5 +1,6 @@
 .app_normal_theme {
   --bg-color: #a4bdcc;
+  --code-bg-color: #cadeeb;
   --invert-bg-color: #133;
   --primary-color: #0f6;
   --primary-color-dark: rgb(0 207 124);
@@ -12,6 +13,7 @@
 
 .app_dark_theme {
   --bg-color: #133;
+  --code-bg-color: rgb(11, 34, 34);
   --invert-bg-color: #a4bdcc;
   --primary-color: #133;
   --primary-color-dark: rgb(52 109 112);
@@ -23,6 +25,7 @@
 }
 .app_orange_theme {
   --bg-color: #faf4fb;
+  --code-bg-color: #f5e7da;
   --invert-bg-color: #bd5012;
   --primary-color: #ffc7a6;
   --primary-color-dark: #aa15aa;
