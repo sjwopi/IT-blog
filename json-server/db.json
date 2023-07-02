@@ -230,7 +230,7 @@
       "id": "2",
       "text": "some comment 2",
       "articleId": "1",
-      "userId": "1"
+      "userId": "2"
     },
     {
       "id": "3",
@@ -244,13 +244,15 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "ADMIN"
+      "role": "ADMIN",
+      "avatar": "https://i.pinimg.com/originals/b1/06/0a/b1060a1598220a4bdb3c36642760d84a.jpg"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "role": "USER"
+      "role": "USER",
+      "avatar": "https://i.pinimg.com/originals/b1/06/0a/b1060a1598220a4bdb3c36642760d84a.jpg"
     }
   ],
   "profile": {
@@ -261,6 +263,6 @@
     "country": "Belarus",
     "city": "Moscow",
     "username": "admin213",
-    "avatar": "https://yt3.ggpht.com/ytc/AAUvwngFzM_Rf6MNwOnFcuphoj93k7VFjlIrj-kSMxbh=s900-c-k-c0x00ffffff-no-rj"
+    "avatar": "https://i.pinimg.com/originals/b1/06/0a/b1060a1598220a4bdb3c36642760d84a.jpg"
   }
 }
