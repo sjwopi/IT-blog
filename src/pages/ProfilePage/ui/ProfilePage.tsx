@@ -1,15 +1,16 @@
 import { memo, useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
-import { classNames } from 'shared/lib/classNames/classNames';
 import {
   DynamicModuleLoader,
   ReducersList,
 } from 'shared/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispath/useAppDispath';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import {
   fetchProfileData,
   profileReducer,
@@ -22,7 +23,6 @@ import {
   getProfileValidateError,
   ValidateProfileError,
 } from 'entities/Profile';
-import cls from './ProfilePage.module.scss';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
 const reducers: ReducersList = {
@@ -31,6 +31,7 @@ const reducers: ReducersList = {
 
 const ProfilePage = memo(() => {
   const { t } = useTranslation('profile');
+  const { id } = useParams<{ id: string }>();
   const dispatch = useAppDispatch();
   const form = useSelector(getProfileForm);
   const isLoading = useSelector(getProfileIsLoading);
@@ -46,11 +47,11 @@ const ProfilePage = memo(() => {
     [ValidateProfileError.INCORRECT_AGE]: t('Некорректный возраст'),
   };
 
-  useEffect(() => {
-    if (__PROJECT__ !== 'storybook') {
-      dispatch(fetchProfileData());
+  useInitialEffect(() => {
+    if (id) {
+      dispatch(fetchProfileData(id));
     }
-  }, [dispatch]);
+  });
 
   const onChangeFirstname = useCallback(
     (value?: string) => {
