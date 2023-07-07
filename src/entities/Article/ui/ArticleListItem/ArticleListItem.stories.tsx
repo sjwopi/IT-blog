@@ -1,20 +1,35 @@
-import { memo } from 'react';
-import { useTranslation } from 'react-i18next';
-import { Article, ArticleList } from 'entities/Article';
-import { classNames } from 'shared/lib/classNames/classNames';
-import cls from './ArticlesPage.module.scss';
+import React from 'react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-interface ArticlesPageProps {
-  className?: string;
-}
-const articles = {
-  id: '3',
-  title: 'Javascript news',
+import { ArticleListItem } from './ArticleListItem';
+import { Article, ArticleView } from '../../model/types/article';
+
+export default {
+  title: 'entities/Article/ArticleListItem',
+  component: ArticleListItem,
+  argTypes: {
+    backgroundColor: { control: 'color' },
+  },
+} as ComponentMeta<typeof ArticleListItem>;
+
+const Template: ComponentStory<typeof ArticleListItem> = (args) => (
+  <ArticleListItem {...args} />
+);
+
+const article = {
+  id: '1',
+  title: 'Javascript news asfasjf asfjkask f',
   subtitle: 'Что нового в JS за 2022 год?',
   img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
   views: 1022,
   createdAt: '26.02.2022',
-  type: ['IT'],
+  user: {
+    id: '1',
+    username: 'Ulbi tv',
+    avatar:
+      'https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg',
+  },
+  type: ['IT', 'SCIENCE', 'POLITICS', 'ECONOMICS'],
   blocks: [
     {
       id: '1',
@@ -77,15 +92,14 @@ const articles = {
   ],
 } as Article;
 
-const ArticlesPage = (props: ArticlesPageProps) => {
-  const { className } = props;
-  const { t } = useTranslation();
-
-  return (
-    <div className={classNames(cls.ArticlesPage, {}, [className])}>
-      <ArticleList articles={[articles]} />
-    </div>
-  );
+export const Big = Template.bind({});
+Big.args = {
+  view: ArticleView.BIG,
+  article,
 };
 
-export default memo(ArticlesPage);
+export const Small = Template.bind({});
+Small.args = {
+  view: ArticleView.SMALL,
+  article,
+};
