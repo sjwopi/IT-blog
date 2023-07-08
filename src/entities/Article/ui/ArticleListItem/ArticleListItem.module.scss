@@ -41,7 +41,7 @@
 
 .SMALL {
   width: 230px;
-  transition: 0.2s;
+  transition: all 0.3s ease-in-out;
   cursor: pointer;
 
   .date {

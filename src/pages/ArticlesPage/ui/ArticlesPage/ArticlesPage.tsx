@@ -9,11 +9,15 @@ interface ArticlesPageProps {
 }
 const articles = {
   id: '3',
+  userId: '1',
   title: 'Javascript news',
   subtitle: 'Что нового в JS за 2022 год?',
   img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
   views: 1022,
   createdAt: '26.02.2022',
+  user: {
+    id: '1', username: 'asdf', avatar: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
+  },
   type: ['IT'],
   blocks: [
     {
@@ -83,7 +87,20 @@ const ArticlesPage = (props: ArticlesPageProps) => {
 
   return (
     <div className={classNames(cls.ArticlesPage, {}, [className])}>
-      <ArticleList articles={[articles]} />
+      <ArticleList
+        articles={[
+          articles,
+          articles,
+          articles,
+          articles,
+          articles,
+          articles,
+          articles,
+          articles,
+          articles,
+          articles,
+        ]}
+      />
     </div>
   );
 };
