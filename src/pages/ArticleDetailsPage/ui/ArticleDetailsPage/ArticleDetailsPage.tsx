@@ -48,7 +48,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
     (text: string) => {
       dispatch(addCommentForArticle(text));
     },
-    [dispatch]
+    [dispatch],
   );
 
   useInitialEffect(() => {
