@@ -1,28 +1,30 @@
-import { memo, useCallback, useEffect } from 'react';
+import { Country } from 'entities/Country';
+import { Currency } from 'entities/Currency';
+import {
+  ProfileCard,
+  ValidateProfileError,
+  fetchProfileData,
+  getProfileError,
+  getProfileForm,
+  getProfileIsLoading,
+  getProfileReadOnly,
+  getProfileValidateError,
+  profileActions,
+  profileReducer,
+} from 'entities/Profile';
+import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { Currency } from 'entities/Currency';
-import { Country } from 'entities/Country';
 import {
   DynamicModuleLoader,
   ReducersList,
 } from 'shared/components/DynamicModuleLoader/DynamicModuleLoader';
+import { classNames } from 'shared/lib/classNames/classNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispath/useAppDispath';
-import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
-import {
-  fetchProfileData,
-  profileReducer,
-  ProfileCard,
-  getProfileForm,
-  getProfileError,
-  getProfileIsLoading,
-  getProfileReadOnly,
-  profileActions,
-  getProfileValidateError,
-  ValidateProfileError,
-} from 'entities/Profile';
+import { Page } from 'shared/ui/Page/Page';
+import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
 const reducers: ReducersList = {
@@ -106,30 +108,32 @@ const ProfilePage = memo(() => {
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <ProfilePageHeader />
+      <Page className={classNames('', {}, [])}>
+        <ProfilePageHeader />
 
-      {validateErrors?.length && validateErrors.map((err) => (
-        <Text
-          key={err}
-          theme={TextTheme.ERROR}
-          text={validateErrorTranslates[err]}
+        {validateErrors?.length && validateErrors.map((err) => (
+          <Text
+            key={err}
+            theme={TextTheme.ERROR}
+            text={validateErrorTranslates[err]}
+          />
+        ))}
+
+        <ProfileCard
+          data={form}
+          isLoading={isLoading}
+          error={error}
+          readonly={readonly}
+          onChangeFirstname={onChangeFirstname}
+          onChangeLastname={onChangeLastname}
+          onChangeAge={onChangeAge}
+          onChangeCity={onChangeCity}
+          onChangeAvatar={onChangeAvatar}
+          onChangeUsername={onChangeUsername}
+          onChangeCurrency={onChangeCurrency}
+          onChangeCountry={onChangeCountry}
         />
-      ))}
-
-      <ProfileCard
-        data={form}
-        isLoading={isLoading}
-        error={error}
-        readonly={readonly}
-        onChangeFirstname={onChangeFirstname}
-        onChangeLastname={onChangeLastname}
-        onChangeAge={onChangeAge}
-        onChangeCity={onChangeCity}
-        onChangeAvatar={onChangeAvatar}
-        onChangeUsername={onChangeUsername}
-        onChangeCurrency={onChangeCurrency}
-        onChangeCountry={onChangeCountry}
-      />
+      </Page>
     </DynamicModuleLoader>
   );
 });
