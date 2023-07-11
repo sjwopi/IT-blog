@@ -9,6 +9,7 @@ import { ArticleDetailsSchema } from 'entities/Article';
 import { ProfileSchema } from 'entities/Profile';
 import { UserSchema } from 'entities/User';
 import { loginSchema } from 'features/AuthByUsername';
+import { UISchema } from 'features/UI';
 import { AddCommentFormSchema } from 'features/addCommentForm';
 import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage/model/types/ArticleDetailsCommentsSchema';
 import { ArticlesPageSchema } from 'pages/ArticlesPage';
@@ -16,6 +17,7 @@ import { CombinedState } from 'redux';
 
 export interface StateSchema {
   user: UserSchema;
+  ui: UISchema;
 
   // Асинхронные редюсеры
   loginForm?: loginSchema;
