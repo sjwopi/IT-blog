@@ -24,3 +24,7 @@ type DeepPartial<T> = T extends object
       [P in keyof T]?: DeepPartial<T[P]>;
     }
   : T;
+
+type AppRecord<K extends keyof any, T> = {
+  [p in K]?: T;
+};
