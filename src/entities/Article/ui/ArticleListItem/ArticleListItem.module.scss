@@ -49,6 +49,8 @@
     right: 0;
     top: 0;
     display: none;
+    text-shadow: 0 0 10px var(--card-bg), 0 0 10px var(--card-bg),
+      0 0 10px var(--card-bg), 0 0 10px var(--card-bg), 0 0 10px var(--card-bg);
   }
 
   &:hover {
@@ -59,7 +61,6 @@
       display: block;
     }
   }
-
   .imageWrapper {
     width: 200px;
     height: 200px;

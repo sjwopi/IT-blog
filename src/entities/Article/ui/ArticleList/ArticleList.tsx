@@ -20,7 +20,9 @@ const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.SMALL
   ));
 
 export const ArticleList = memo((props: ArticleListProps) => {
-  const { className, articles, view = ArticleView.SMALL, isLoading } = props;
+  const {
+    className, articles, view = ArticleView.SMALL, isLoading,
+  } = props;
   const { t } = useTranslation();
 
   const renderArticle = (article: Article) => (
