@@ -1,6 +1,8 @@
 import { StateSchema } from 'app/providers/StoreProvider';
 import { getUIScrollByPath, uiActions } from 'features/UI';
-import { MutableRefObject, ReactNode, UIEvent, memo, useRef } from 'react';
+import {
+  MutableRefObject, ReactNode, UIEvent, memo, useRef,
+} from 'react';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { classNames } from 'shared/lib/classNames/classNames';
@@ -39,7 +41,7 @@ export const Page = memo((props: PageProps) => {
       uiActions.setScrollPosition({
         position: e.currentTarget.scrollTop,
         path: pathname,
-      })
+      }),
     );
   }, 1000);
 
@@ -50,7 +52,8 @@ export const Page = memo((props: PageProps) => {
       onScroll={onScroll}
     >
       {children}
-      <div ref={triggerRef} />
+      <div className={cls.trigger} ref={triggerRef} />
+      {onScrollEnd ? <div className={cls.trigger} ref={triggerRef} /> : null}
     </section>
   );
 });

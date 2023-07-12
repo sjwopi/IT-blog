@@ -5,11 +5,9 @@
 }
 
 .SMALL {
-  display: flex;
-  flex-wrap: wrap;
-
-  .card {
-    margin-right: 30px;
-    margin-bottom: 30px;
-  }
+  display: grid;
+  grid-row: auto;
+  grid-template-columns: repeat(4, 1fr);
+  /* flex-wrap: wrap; */
+  gap: 30px;
 }
