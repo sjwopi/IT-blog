@@ -24,3 +24,16 @@ body {
   overflow-y: auto;
   width: 100%;
 }
+
+*::-webkit-scrollbar {
+  width: 12x;               /* ширина scrollbar */
+  height: 10px;               /* ширина scrollbar */
+}
+*::-webkit-scrollbar-track {
+  background: var(--card-bg);        /* цвет дорожки */
+}
+*::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);    /* цвет плашки */
+  border-radius: 20px;       /* закругления плашки */
+  border: 2px solid var(--primary-color-dark);  /* padding вокруг плашки */
+}

@@ -11,7 +11,7 @@ import { UserSchema } from 'entities/User';
 import { loginSchema } from 'features/AuthByUsername';
 import { UISchema } from 'features/UI';
 import { AddCommentFormSchema } from 'features/addCommentForm';
-import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage/model/types/ArticleDetailsCommentsSchema';
+import { ArticleDetailsPageSchema } from 'pages/ArticleDetailsPage';
 import { ArticlesPageSchema } from 'pages/ArticlesPage';
 import { CombinedState } from 'redux';
 
@@ -23,9 +23,9 @@ export interface StateSchema {
   loginForm?: loginSchema;
   profile?: ProfileSchema;
   articleDetails?: ArticleDetailsSchema;
-  articleDetailsComments?: ArticleDetailsCommentsSchema;
   addCommentForm?: AddCommentFormSchema;
   articlePage?: ArticlesPageSchema;
+  articleDetailsPage?: ArticleDetailsPageSchema
 }
 
 export type StateSchemaKey = keyof StateSchema;
