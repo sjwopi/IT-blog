@@ -1,0 +1,11 @@
+.BIG .card {
+  margin-bottom: 30px;
+}
+
+.SMALL {
+  display: grid;
+  grid-row: auto;
+  grid-template-columns: repeat(4, 1fr);
+  /* flex-wrap: wrap; */
+  gap: 30px;
+}/*# sourceMappingURL=ArticleList.module.css.map */

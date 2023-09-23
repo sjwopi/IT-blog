@@ -1,0 +1,34 @@
+.ProfileCard {
+  padding: 20px;
+}
+
+.data {
+  margin-top: 30px;
+  padding: 20px;
+  border: 2px solid var(--invert-bg-color);
+}
+
+.input {
+  margin-top: 10px;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
+
+.avatarWrapper {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.selectContainer {
+  display: flex;
+}
+
+.select {
+  margin-right: 50px;
+}/*# sourceMappingURL=ProfileCard.module.css.map */

@@ -1,0 +1,16 @@
+.LoginForm {
+  color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 40px 20px;
+}
+
+.loginTitle {
+  margin-bottom: 20px;
+}
+
+.loginBtn {
+  margin-left: auto;
+}/*# sourceMappingURL=LoginForm.module.css.map */

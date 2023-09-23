@@ -1,0 +1,25 @@
+.AppLink {
+  color: var(--primary-color);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+.AppLink:hover {
+  opacity: 0.75;
+}
+
+.primary {
+  color: var(--primary-color);
+}
+
+.secondary {
+  color: var(--secondary-color);
+}
+
+.btn {
+  border: 1px var(--primary-color) solid;
+  border-radius: 8px;
+  padding: 5px 10px;
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+}/*# sourceMappingURL=AppLink.module.css.map */
