@@ -3,7 +3,7 @@ import { userReducer } from 'entities/User';
 import { uiReducer } from 'features/UI';
 import { CombinedState, Reducer } from 'redux';
 import { $api } from 'shared/api/api';
-import { createReducerManager } from './reducerManager';
+import { createReducerManager } from './ReducerManager';
 import { StateSchema, ThunkExtraArg } from './StateSchema';
 
 export function createReduxStore(
