@@ -25,7 +25,7 @@ Primary.args = {
   title: 'Title',
   text: 'asdf asdf f asdf asddfasdfas',
   size: TextSize.S,
-};export const PrimaryL = Template.bind({});
+}; export const PrimaryL = Template.bind({});
 Primary.args = {
   title: 'Title',
   text: 'asdf asdf f asdf asddfasdfas',
