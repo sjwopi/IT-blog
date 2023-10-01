@@ -19,7 +19,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks'],
+  plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks', 'ulbi-tv-plugin'],
   rules: {
     'react/jsx-indent': [2],
     'react/jsx-indent-props': [2],
@@ -64,6 +64,7 @@ module.exports = {
     'react/no-array-index-key': 'off',
     'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
+    'ulbi-tv-plugin/path-checker': 'error',
   },
   globals: {
     __IS_DEV__: true,

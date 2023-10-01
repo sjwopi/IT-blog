@@ -1,11 +1,11 @@
 import { memo, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { getSidebarItem } from 'widgets/Sidebar/model/selectors/getSidebarItems';
 import { classNames } from 'shared/lib/classNames/classNames';
 import ThemeSwitcher from 'shared/ui/ThemeSwitcher/ThemeSwitcher';
 import { Button, ButtonSize } from 'shared/ui/Button/Button';
 import ToggleLanguage from 'shared/ui/ToggleLanguage/ToggleLanguage';
+import { getSidebarItem } from '../../model/selectors/getSidebarItems';
 import cls from './Sidebar.module.scss';
 import { SidebarItemsList } from '../../model/types/sidebar';
 import SidebarItem from '../SidebarItem/SidebarItem';

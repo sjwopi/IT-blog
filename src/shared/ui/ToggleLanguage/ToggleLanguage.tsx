@@ -1,7 +1,7 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { ButtonTheme, Button } from 'shared/ui/Button/Button';
 import { classNames } from 'shared/lib/classNames/classNames';
+import { ButtonTheme, Button } from '../Button/Button';
 import cls from './ToggleLanguage.module.scss';
 
 interface ToggleLanguageProps {
